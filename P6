@@ -1,0 +1,16 @@
+import random
+def uniform_random():
+    return random.uniform(0, 1)
+def f(x):
+    return x**2
+N = 10
+samples = [uniform_random() for _ in range(N)]
+f_values = [f(x) for x in samples]
+print("Random Samples (x):")
+print(samples)
+print("\nFunction values f(x) = x^2:")
+print(f_values)
+I_est = sum(f_values) / N # Since interval is [0,1]
+print("\nMonte Carlo Estimate of 0 ^1 x^2 dx =", I_est)
+I_true = 1/3
+print("True Value =", I_true)
